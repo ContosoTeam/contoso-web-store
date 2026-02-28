@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contoso Web Store</title>
+    <title>Contoso Web Store - コントソ ウェブストア</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -9,23 +9,23 @@
         <div class="container">
             <a class="navbar-brand" href="/">Contoso Web Store</a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="/search?q=">Products</a>
-                <a class="nav-link" href="/cart">Cart</a>
-                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/search?q=">商品一覧</a>
+                <a class="nav-link" href="/cart">カート</a>
+                <a class="nav-link" href="/login">ログイン</a>
                 <!-- VULNERABILITY: Admin panel link visible to all -->
-                <a class="nav-link" href="/admin">Admin</a>
+                <a class="nav-link" href="/admin">管理者</a>
             </div>
         </div>
     </nav>
     <div class="container mt-5">
         <div class="jumbotron text-center">
-            <h1>Welcome to Contoso Web Store</h1>
-            <p class="lead">Your one-stop shop for Contoso products</p>
+            <h1>Contoso Web Store へようこそ</h1>
+            <p class="lead">コントソの商品がすべて揃うオンラインストア</p>
             <form action="/search" method="GET" class="mt-4">
                 <div class="input-group w-50 mx-auto">
                     <!-- VULNERABILITY: No XSS protection on search input reflection -->
-                    <input type="text" name="q" class="form-control" placeholder="Search products...">
-                    <button class="btn btn-primary" type="submit">Search</button>
+                    <input type="text" name="q" class="form-control" placeholder="商品を検索...">
+                    <button class="btn btn-primary" type="submit">検索</button>
                 </div>
             </form>
         </div>
