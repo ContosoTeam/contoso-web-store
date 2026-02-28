@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search - Contoso Web Store</title></head>
+<body>
+    <h1>Search Results for: {{ query | safe }}</h1>
+    <!-- VULNERABILITY: Using |safe filter allows XSS -->
+    {% for product in products %}
+    <div class="product-card">
+        <h3>{{ product[1] }}</h3>
+        <p>{{ product[2] }}</p>
+        <p>${{ product[3] }}</p>
+        <a href="/product/{{ product[0] }}">View Details</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
